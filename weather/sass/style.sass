@@ -1,0 +1,496 @@
+@import "_normalize.scss"
+@import "_reset.scss"
+
+@font-face
+  font-family: 'Montserrat'
+  font-style: normal
+  font-weight: 400
+  src: url('../fonts/montserrat-v25-latin_cyrillic-regular.woff2'), url('../fonts/montserrat-v25-latin_cyrillic-regular.woff')
+
+@font-face
+  font-family: 'Montserrat'
+  font-style: bold
+  font-weight: 700
+  src: url('../fonts/montserrat-v25-latin_cyrillic-700.woff2'), url('../fonts/montserrat-v25-latin_cyrillic-700.woff')
+
+@font-face
+  font-family: 'Montserrat'
+  font-style: medium
+  font-weight: 500
+  src: url('../fonts/montserrat-v25-latin-500.woff2'), url('../fonts/montserrat-v25-latin-500.woff')
+
+@font-face
+  font-family: 'Montserrat'
+  font-style: semibold
+  font-weight: 600
+  src: url('../fonts/montserrat-v25-latin-600.woff2'), url('../fonts/montserrat-v25-latin-600.woff')
+
+*
+  box-sizing: border-box
+
+a
+  text-decoration: none
+
+$color__dark: #333333
+$color__red: #DB4D4D
+$color__grey: #f6f6f6
+$color__white: #ffffff
+$color__greyDark: #A6A5A5
+
+html
+  font-family: 'Montserrat', sans-serif
+
+body
+  background-color: $color__grey
+
+.container
+  padding: 0 15px
+  margin: 0 auto
+  max-width: 1140px
+
+// header
+
+.header
+  margin-bottom: 30px
+  height: 100px
+  box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.05)
+  background-color: $color__white
+  &__container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+  &__logo
+    transform: translateY(-6px)
+
+.search
+  position: relative
+  &__input
+    padding-left: 25px
+    width: 285px
+    height: 45px
+    border: none
+    border-radius: 10px
+    font-size: 20px
+    line-height: 1
+    color: $color__dark
+    background-color: $color__grey
+    &:focus
+      outline: 2px solid #9DC4FA
+    &::placeholder
+      font-size: 20px
+      line-height: 1
+      color: $color__dark
+  &__button
+    position: absolute
+    top: 50%
+    right: 15px
+    width: 28px
+    height: 28px
+    border: none
+    background: url('../img/magnifier.svg') no-repeat center/cover
+    background-color: transparent
+    transform: translateY(-50%)
+    cursor: pointer
+
+// hero
+
+.section-hero
+  margin-bottom: 30px
+  &__container
+    padding: 60px 98px
+    border-radius: 10px
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.05)
+    background-color: $color__white
+  &__main-content
+    margin-bottom: 40px
+    text-align: center
+  &__by-time
+    margin-bottom: 60px
+
+.main-content
+  &__city
+    margin-bottom: 10px
+    font-weight: 700
+    font-size: 56px
+    line-height: 120%
+    color: $color__dark
+  &__type-weather
+    margin-bottom: 10px
+    font-weight: 400
+    font-size: 24px
+    line-height: 120%
+    color: $color__dark
+  &__degrees
+    font-weight: 600
+    font-size: 100px
+    line-height: 120%
+    color: $color__dark
+
+.by-time
+  display: flex
+  justify-content: space-between
+  &__item
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+  &__hour
+    margin-bottom: 18px
+    font-weight: 500
+    font-size: 20px
+    line-height: 130%
+    color: $color__dark
+  &__icon
+    margin-bottom: 10px
+    width: 64px
+    height: 64px
+  &__degress
+    font-weight: 500
+    font-size: 30px
+    line-height: 130%
+    color: $color__dark
+
+.icon__01d,
+.icon__01n,
+.icon__02d,
+.icon__02n,
+.icon__03d,
+.icon__03n,
+.icon__04d,
+.icon__04n,
+.icon__09d,
+.icon__09n,
+.icon__10d,
+.icon__10n,
+.icon__11n,
+.icon__11n,
+.icon__13d,
+.icon__13n,
+.icon__50d,
+.icon__50n
+  background-size: 60px
+  background-repeat: no-repeat
+
+.icon__01d,
+.icon__01n
+  background-image: url("../img/01d.png")
+
+.icon__02d,
+.icon__02n
+  background-image: url("../img/02d.png")
+
+.icon__03d,
+.icon__03n
+  background-image: url("../img/03d.png")
+
+.icon__04d,
+.icon__04n
+  background-image: url("../img/04d.png")
+
+.icon__09d,
+.icon__09n
+  background-image: url("../img/09d.png")
+
+.icon__10d,
+.icon__10n
+  background-image: url("../img/10d.png")
+
+.icon__11n,
+.icon__11n
+  background-image: url("../img/11d.png")
+
+.icon__13d,
+.icon__13n
+  background-image: url("../img/13d.png")
+
+.icon__50d,
+.icon__50n
+  background-image: url("../img/50d.png")
+
+.additional-information
+  display: flex
+  flex-wrap: wrap
+  gap: 30px
+  &__item
+    flex: 0 0 45%
+  &__text
+    margin-bottom: 10px
+    font-weight: 400
+    font-size: 20px
+    line-height: 130%
+    color: $color__dark
+  &__value
+    font-weight: 500
+    font-size: 30px
+    line-height: 130%
+    color: $color__dark
+
+// days
+
+.section-container
+  padding: 40px 98px
+  border-radius: 10px
+  box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.05)
+  background-color: $color__white
+
+.section-days
+  &__heading
+    margin-bottom: 25px
+    font-weight: 700
+    font-size: 24px
+    line-height: 130%
+    color: $color__dark
+
+.weather-list
+  display: flex
+  justify-content: space-between
+  text-align: center
+  &__item
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 20px 40px
+    border: 1px solid #E5E5E5
+    border-radius: 10px
+    transition: background-color .3s ease
+    &:hover
+      background-color: $color__grey
+  &__link
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+  &__weeks-day
+    font-weight: 400
+    font-size: 24px
+    line-height: 130%
+    color: $color__dark
+  &__date
+    margin-bottom: 10px
+    font-weight: 400
+    font-size: 18px
+    line-height: 130%
+    color: $color__greyDark
+  &__icon
+    margin-bottom: 10px
+    width: 64px
+    height: 64px
+  &__degress
+    margin-bottom: 3px
+    font-weight: 500
+    font-size: 24px
+    line-height: 130%
+    color: $color__dark
+  &__feel-like
+    margin-bottom: 7px
+    font-weight: 400
+    font-size: 18px
+    line-height: 22px
+    color: $color__greyDark
+  &__type-weather
+    max-width: 90px
+    font-weight: 400
+    font-size: 16px
+    line-height: 130%
+    color: $color__greyDark
+
+.red
+  color: $color__red
+
+// footer
+
+.footer
+  padding: 40px 0
+  &__container
+    max-width: 1170px
+  &__description
+    margin-bottom: 10px
+    padding-bottom: 10px
+    font-weight: 400
+    font-size: 16px
+    line-height: 130%
+    border-bottom: 1px solid #E5E5E5
+    color: $color__dark
+  &__link
+    font-weight: 600
+    text-decoration: underline
+    color: $color__dark
+  &__copyright
+    font-weight: 600
+    font-size: 16px
+    line-height: 130%
+    color: $color__dark
+
+@media (max-width: 1200px)
+  .container
+    width: 1140px
+
+@media (max-width: 1199px)
+  .container
+    width: 960px
+
+  // days
+
+  .weather-list
+    flex-wrap: wrap
+    justify-content: center
+    gap: 20px
+
+@media (max-width: 991px)
+  .container
+    width: 720px
+
+  // days
+  .weather-list
+    &__item
+      padding: 15px 40px
+
+@media (max-width: 767px)
+  .container
+    width: 540px
+
+  // header
+
+  .header
+    margin-bottom: 20px
+
+  // hero
+
+  .section-hero
+    margin-bottom: 20px
+    &__container
+      padding: 40px
+    &__by-time
+      margin-bottom: 40px
+
+  .main-content
+    &__city
+      font-size: 48px
+    &__type-weather
+      font-size: 20px
+    &__degrees
+      font-size: 80px
+
+  .by-time
+    justify-content: center
+    flex-wrap: wrap
+    gap: 30px
+    &__hour
+      margin-bottom: 15px
+      font-size: 18px
+    &__icon
+      margin-bottom: 25px
+    &__degress
+      font-size: 26px
+
+  .additional-information
+    justify-content: center
+    flex-wrap: wrap
+    gap: 30px
+    text-align: center
+    &__item
+      flex: 0 0 45%
+    &__text
+      font-size: 18px
+    &__value
+      font-size: 24px
+
+  // days
+
+  .section-container
+    padding: 40px
+
+  .section-days
+    &__heading
+      font-size: 22px
+      text-align: center
+
+  .weather-list
+    &__item
+      padding: 20px 50px
+
+  // footer
+
+  .footer
+    padding: 20px 0
+    &__description
+      font-size: 14px
+    &__copyright
+      font-size: 14px
+
+@media (max-width: 575px)
+  .container
+    width: 100%
+
+  // header
+
+  .search
+    position: fixed
+    top: 100px
+    right: -101%
+    width: 320px
+    height: 100px
+    border-bottom-left-radius: 10px
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.05)
+    background-color: $color__white
+    transition: right .5s ease-in-out
+    z-index: 1
+    &__input
+      position: absolute
+      top: 25px
+      right: 17.5px
+    &__button
+      top: 33px
+      right: 32.5px
+      transform: none
+
+  .search_active
+    right: 0
+
+  .burger
+    position: absolute
+    top: 40px
+    right: 30px
+    width: 30px
+    height: 16px
+    z-index: 1
+    span
+      display: block
+      margin-bottom: 5px
+      width: 100%
+      height: 2px
+      background-color: $color__dark
+      transition: transform .5s ease-in-out
+      &:last-child
+        margin-bottom: 0
+
+  .burger_active
+    span
+      margin-bottom: -2px
+      &:nth-child(1)
+        transform: translateY(3px) rotate(-45deg)
+      &:nth-child(2)
+        display: none
+      &:nth-child(3)
+        transform: translateY(3px) rotate(45deg)
+
+  // hero
+
+  .main-content
+    &__city
+      font-size: 32px
+    &__type-weather
+      font-size: 16px
+    &__degrees
+      font-size: 60px
+
+  // days
+
+  .section-days
+    &__heading
+      font-size: 20px
